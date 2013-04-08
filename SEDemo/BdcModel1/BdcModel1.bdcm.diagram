@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<minimalLanguageDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="$rootname$">
+  <modelRootMoniker Name="/BdcModel1" />
+  <nestedChildShapes>
+    <entityShape Id="acd157ef-0a8f-4995-8246-f8bd8c5230cf" absoluteBounds="2.5, 0.5, 1.5, 1.7566536458333335">
+      <entityMoniker name="SEDemo.BdcModel1.SalesforceAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb3141f6-18dd-4283-b1eb-3fcb7a01534f" absoluteBounds="2.515, 0.91, 1.4700000000000002, 0.37180582682291663" name="Identifiers" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6719527f-51db-4843-a17e-6469abceb754" absoluteBounds="2.515, 1.2918058268229167, 1.4700000000000002, 0.86484781901041674" name="Methods" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="a5b3b58f-d292-4389-98fe-73fd7354d469" absoluteBounds="0.5, 1.375, 1.5, 1.7566536458333339">
+      <entityMoniker name="SEDemo.BdcModel1.SalesforceContact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f222e7c-fe34-46b6-a298-45f7d97900aa" absoluteBounds="0.515, 1.7850000000000001, 1.4700000000000002, 0.37180582682291663" name="Identifiers" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2270fe59-b0ee-4425-a314-02c56d1e9dfc" absoluteBounds="0.515, 2.1668058268229169, 1.4700000000000002, 0.86484781901041674" name="Methods" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <associationGroupConnector edgePoints="[(2.5 : 1.81582682291667); (2 : 1.81582682291667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <associationGroupMoniker name="/SEDemo.BdcModel1.SalesforceAccount/SalesforceAccountToSalesforceContactAssociation" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="acd157ef-0a8f-4995-8246-f8bd8c5230cf" />
+        <entityShapeMoniker Id="a5b3b58f-d292-4389-98fe-73fd7354d469" />
+      </nodes>
+    </associationGroupConnector>
+  </nestedChildShapes>
+</minimalLanguageDiagram>

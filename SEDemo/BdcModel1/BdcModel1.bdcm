@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/windows/2007/BusinessDataCatalog" Name="BdcModel1">
+  <LobSystems>
+    <LobSystem Name="BdcModel1" Type="DotNetAssembly">
+      <Properties>
+        <Property Name="ShowInSearchUI" Type="System.String">x</Property>
+      </Properties>
+      <LobSystemInstances>
+        <LobSystemInstance Name="BdcModel1">
+          <Properties>
+            <Property Name="ShowInSearchUI" Type="System.String">x</Property>
+          </Properties>
+          </LobSystemInstance>
+      </LobSystemInstances>
+      <Entities>
+        <Entity Name="SalesforceAccount" Namespace="SEDemo.BdcModel1" EstimatedInstanceCount="1000" Version="1.0.0.24">
+          <Properties>
+            <Property Name="Class" Type="System.String">SEDemo.BdcModel1.SalesforceAccountService, BdcModel1</Property>
+          </Properties>
+          <Identifiers>
+            <Identifier Name="accountNumber" TypeName="System.String" />
+            <!-- TODO: Change the name of the ID and if needed the TypeName of your identifier. -->
+          </Identifiers>
+          <Methods>
+            <!-- start finder method -->
+            <Method Name="ReadList">
+              <Properties>
+                <Property Name="RootFinder" Type="System.String">Empty</Property>
+              </Properties>
+              <!-- TODO: Change the name of the method if needed. -->
+              <Parameters>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor TypeName="System.Collections.Generic.IEnumerable`1[[SEDemo.BdcModel1.Entity1, BdcModel1]]" IsCollection="true" Name="Entity1List">
+                    <TypeDescriptors>
+                      <TypeDescriptor TypeName="SEDemo.BdcModel1.Entity1, BdcModel1" Name="Entity1">
+                        <TypeDescriptors>
+                          <TypeDescriptor TypeName="System.String" IdentifierName="accountNumber" Name="accountNumber" DefaultDisplayName="Account Number" />
+                          <TypeDescriptor TypeName="System.String" Name="accountName" DefaultDisplayName="Account Name" />
+						              <TypeDescriptor TypeName="System.String" Name="phoneNumber" DefaultDisplayName="Phone Number" />
+						              <TypeDescriptor TypeName="System.String" Name="billingCountry" DefaultDisplayName="Billing Country" />
+                          <!-- TODO: Add TypeDescriptors when you add properties to Entity1. -->
+                          <TypeDescriptor TypeName="System.String" Name="description" DefaultDisplayName="Description" />
+                          <TypeDescriptor TypeName="System.String" Name="industry" DefaultDisplayName="Industry" />
+                          <TypeDescriptor TypeName="System.String" Name="rating" DefaultDisplayName="Rating" />
+                          <TypeDescriptor TypeName="System.String" Name="website" DefaultDisplayName="Website" />
+                          <TypeDescriptor TypeName="System.String" Name="annualIncome" DefaultDisplayName="Annual Income" />
+                          <TypeDescriptor TypeName="System.String" Name="annualRevenue" DefaultDisplayName="Annual Revenue" />
+                        </TypeDescriptors>
+                      </TypeDescriptor>
+                    </TypeDescriptors>
+                  </TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="Finder" ReturnParameterName="returnParameter" Default="true" Name="ReadList" DefaultDisplayName="Entity1 List">
+                <Properties>
+                  <Property Name="UseClientCachingForSearch" Type="System.String"></Property>
+                  <Property Name="RootFinder" Type="System.String"></Property>
+                </Properties>
+              </MethodInstance>
+              </MethodInstances>
+            </Method>
+            <!-- end finder method -->
+            <!-- start specific finder method -->
+            <Method Name="ReadItem">
+              <Properties>
+                <Property Name="RootFinder" Type="System.String">Empty</Property>
+              </Properties>
+              <Parameters>
+                <Parameter Direction="In" Name="id">
+                  <TypeDescriptor TypeName="System.String" IdentifierName="accountNumber" Name="Account Number" />
+                </Parameter>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor TypeName="SEDemo.BdcModel1.Entity1, BdcModel1" Name="Entity1">
+                    <TypeDescriptors>
+                      <TypeDescriptor TypeName="System.String" IdentifierName="accountNumber" Name="accountNumber" DefaultDisplayName="Account Number" />
+                      <TypeDescriptor TypeName="System.String" Name="accountName" DefaultDisplayName="Account Name" />
+                      <!-- TODO: Add TypeDescriptors when you add properties to Entity1. -->
+                      <TypeDescriptor Name="phoneNumber" TypeName="System.String" DefaultDisplayName="Phone Number" />
+					            <TypeDescriptor Name="billingCountry" TypeName="System.String" DefaultDisplayName="Billing Country" />
+                      <TypeDescriptor TypeName="System.String" Name="description" DefaultDisplayName="Description" />
+                      <TypeDescriptor TypeName="System.String" Name="industry" DefaultDisplayName="Industry" />
+                      <TypeDescriptor TypeName="System.String" Name="rating" DefaultDisplayName="Rating" />
+                      <TypeDescriptor TypeName="System.String" Name="website" DefaultDisplayName="Website" />
+                      <TypeDescriptor TypeName="System.String" Name="annualIncome" DefaultDisplayName="Annual Income" />
+                      <TypeDescriptor TypeName="System.String" Name="annualRevenue" DefaultDisplayName="Annual Revenue" />                      
+					  </TypeDescriptors>
+                  </TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="SpecificFinder" ReturnParameterName="returnParameter" Default="true" Name="ReadItem" DefaultDisplayName="Read Entity1" />
+              </MethodInstances>
+            </Method>
+            <Method Name="Update" />
+            <Method Name="SalesforceAccountToSalesforceContact">
+              <Parameters>
+                <Parameter Name="accountNumber" Direction="In">
+                  <TypeDescriptor Name="accountNumber" TypeName="System.String" IdentifierEntityName="SalesforceAccount" IdentifierEntityNamespace="SEDemo.BdcModel1" IdentifierName="accountNumber" ForeignIdentifierAssociationName="SalesforceAccountToSalesforceContactAssociationNavigator111" /></Parameter>
+                <Parameter Name="salesforceContactList" Direction="Return">
+                  <TypeDescriptor Name="SalesforceContactList" TypeName="System.Collections.Generic.IEnumerable`1[[SEDemo.BdcModel1.Contact, BdcModel1]]" IsCollection="true">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="SalesforceContact" TypeName="SEDemo.BdcModel1.Contact, BdcModel1">
+                        <TypeDescriptors>
+                          <TypeDescriptor Name="contactID" DefaultDisplayName="Contact ID" TypeName="System.String" IdentifierEntityName="SalesforceContact" IdentifierEntityNamespace="SEDemo.BdcModel1" IdentifierName="contactID" />
+                          <TypeDescriptor Name="contactName" DefaultDisplayName="Contact Name" TypeName="System.String" />
+                          <TypeDescriptor Name="contactPhone" DefaultDisplayName="Phone Number" TypeName="System.String" />
+                          <TypeDescriptor Name="contactPicture" DefaultDisplayName="Picture" TypeName="System.String" />
+                          <TypeDescriptor Name="contactAccountID" DefaultDisplayName="Account ID" IdentifierEntityNamespace="SEDemo.BdcModel1" IdentifierEntityName="SalesforceAccount" IdentifierName="accountNumber" ForeignIdentifierAssociationName="SalesforceAccountToSalesforceContactAssociationNavigator111" TypeName="System.String" /></TypeDescriptors></TypeDescriptor></TypeDescriptors></TypeDescriptor></Parameter>
+              </Parameters>
+              <MethodInstances><Association Name="SalesforceAccountToSalesforceContactAssociationNavigator111" Type="AssociationNavigator" ReturnParameterName="salesforceContactList">
+                  <SourceEntity Name="SalesforceAccount" Namespace="SEDemo.BdcModel1" />
+                  <DestinationEntity Name="SalesforceContact" Namespace="SEDemo.BdcModel1" />
+                </Association></MethodInstances>
+              </Method>
+            <!-- end specific finder method -->
+          </Methods>
+        </Entity>
+        <Entity Name="SalesforceContact" Namespace="SEDemo.BdcModel1" EstimatedInstanceCount="1000" Version="1.0.0.32">
+          <Properties>
+            <Property Name="Class" Type="System.String">SEDemo.BdcModel1.SalesforceContactService, BdcModel1</Property>
+          </Properties>
+          <Identifiers>
+            <Identifier Name="contactID" TypeName="System.String" />
+          </Identifiers>
+          <Methods>
+            <!-- start finder method -->
+            <Method Name="ReadList">
+              <Properties>
+                <Property Name="RootFinder" Type="System.String">Empty</Property>
+              </Properties>
+              <!-- TODO: Change the name of the method if needed. -->
+              <Parameters>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor TypeName="System.Collections.Generic.IEnumerable`1[[SEDemo.BdcModel1.Contact, BdcModel1]]" IsCollection="true" Name="contacts">
+                    <TypeDescriptors>
+                      <TypeDescriptor TypeName="SEDemo.BdcModel1.Contact, BdcModel1" Name="Contact">
+                        <TypeDescriptors>
+                          <TypeDescriptor TypeName="System.String" IdentifierName="contactID" Name="contactID" DefaultDisplayName="Contact ID" />
+                          <TypeDescriptor TypeName="System.String" Name="contactName" DefaultDisplayName="Contact Name" />
+						              <TypeDescriptor TypeName="System.String" Name="contactPhone" DefaultDisplayName="Phone Number" />
+            						  <TypeDescriptor TypeName="System.String" Name="contactAccountID" DefaultDisplayName="Account ID" />
+                          <TypeDescriptor TypeName="System.String" Name="contactPicture" DefaultDisplayName="Contact Picture" />
+                          <TypeDescriptor TypeName="System.String" Name="contactCompany" DefaultDisplayName="Company Name" />
+						  <!-- TODO: Add TypeDescriptors when you add properties to Entity1. -->
+                          <TypeDescriptor TypeName="System.String" Name="mailingcountry" DefaultDisplayName="Country" />
+                          <TypeDescriptor TypeName="System.String" Name="mailingState" DefaultDisplayName="State" />
+                          <TypeDescriptor TypeName="System.String" Name="mailingStreet" DefaultDisplayName="Street" />
+                          <TypeDescriptor TypeName="System.String" Name="contactEmail" DefaultDisplayName="eMail" />
+                          <TypeDescriptor TypeName="System.String" Name="contactDepartment" DefaultDisplayName="Department" />
+                          <TypeDescriptor TypeName="System.String" Name="contactTitle" DefaultDisplayName="Title" />
+                          <TypeDescriptor TypeName="System.String" Name="contactLeadSource" DefaultDisplayName="Lead Source" />
+                          <TypeDescriptor TypeName="System.String" Name="contactAssistantName" DefaultDisplayName="Asst. Name" />
+                          <TypeDescriptor TypeName="System.String" Name="contactAssistantPhone" DefaultDisplayName="Asst. Phone" />
+                          <TypeDescriptor TypeName="System.String" Name="contactPostCode" DefaultDisplayName="Post Code" />
+                        </TypeDescriptors>
+                      </TypeDescriptor>
+                    </TypeDescriptors>
+                  </TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="Finder" ReturnParameterName="returnParameter" Default="true" Name="ReadList" DefaultDisplayName="Contact List">
+                <Properties>
+                  <Property Name="UseClientCachingForSearch" Type="System.String"></Property>
+                  <Property Name="RootFinder" Type="System.String"></Property>
+                </Properties>
+              </MethodInstance>
+              </MethodInstances>
+            </Method>
+            <!-- end finder method -->
+            <!-- start specific finder method -->
+            <Method Name="ReadItem">
+              <Properties>
+                <Property Name="RootFinder" Type="System.String">Empty</Property>
+              </Properties>
+              <Parameters>
+                <Parameter Direction="In" Name="id">
+                  <TypeDescriptor TypeName="System.String" IdentifierName="contactID" Name="Contact ID" />
+                </Parameter>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor TypeName="SEDemo.BdcModel1.Contact, BdcModel1" Name="Contact">
+                    <TypeDescriptors>
+                      <TypeDescriptor TypeName="System.String" IdentifierName="contactID" Name="contactID" DefaultDisplayName="Contact ID" />
+                      <TypeDescriptor TypeName="System.String" Name="contactName" DefaultDisplayName="Contact Name" />
+                      <!-- TODO: Add TypeDescriptors when you add properties to Entity1. -->
+                      <TypeDescriptor Name="contactPhone" TypeName="System.String" DefaultDisplayName="Phone Number" />
+					            <TypeDescriptor Name="contactAccountID" TypeName="System.String" DefaultDisplayName="Account ID" IdentifierEntityName="SalesforceAccount" IdentifierEntityNamespace="SEDemo.BdcModel1" IdentifierName="accountNumber" ForeignIdentifierAssociationEntityName="SalesforceAccount" ForeignIdentifierAssociationEntityNamespace="SEDemo.BdcModel1" ForeignIdentifierAssociationName="SalesforceAccountToSalesforceContactAssociationNavigator111" />
+                      <TypeDescriptor TypeName="System.String" Name="contactCompany" DefaultDisplayName="Company Name" />
+                      <TypeDescriptor TypeName="System.String" Name="contactPicture" DefaultDisplayName="Contact Picture" />
+                      <TypeDescriptor TypeName="System.String" Name="mailingcountry" DefaultDisplayName="Country" />
+                      <TypeDescriptor TypeName="System.String" Name="mailingState" DefaultDisplayName="State" />
+                      <TypeDescriptor TypeName="System.String" Name="mailingStreet" DefaultDisplayName="Street" />
+                      <TypeDescriptor TypeName="System.String" Name="contactEmail" DefaultDisplayName="eMail" />
+                      <TypeDescriptor TypeName="System.String" Name="contactDepartment" DefaultDisplayName="Department" />
+                      <TypeDescriptor TypeName="System.String" Name="contactTitle" DefaultDisplayName="Title" />
+                      <TypeDescriptor TypeName="System.String" Name="contactLeadSource" DefaultDisplayName="Lead Source" />
+                      <TypeDescriptor TypeName="System.String" Name="contactAssistantName" DefaultDisplayName="Asst. Name" />
+                      <TypeDescriptor TypeName="System.String" Name="contactAssistantPhone" DefaultDisplayName="Asst. Phone" />
+                      <TypeDescriptor TypeName="System.String" Name="contactPostCode" DefaultDisplayName="Post Code" />
+                    </TypeDescriptors>
+                  </TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="SpecificFinder" ReturnParameterName="returnParameter" Default="true" Name="ReadItem" DefaultDisplayName="Read Contact" />
+              </MethodInstances>
+            </Method>
+            <Method Name="SalesforceContactToSalesforceAccount">
+              <Parameters>
+                <Parameter Name="contactID" Direction="In">
+                  <TypeDescriptor Name="contactID" TypeName="System.String" IdentifierEntityName="SalesforceContact" IdentifierEntityNamespace="SEDemo.BdcModel1" IdentifierName="contactID" ForeignIdentifierAssociationName="SalesforceContactToSalesforceAccountAssociationNavigator1111" /></Parameter>
+                <Parameter Name="salesforceAccountList" Direction="Return">
+                  <TypeDescriptor Name="SalesforceAccountList" TypeName="System.Collections.Generic.IEnumerable`1[[SEDemo.BdcModel1.Entity1, BdcModel1]]" IsCollection="true">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="SalesforceAccount" TypeName="SEDemo.BdcModel1.Entity1, BdcModel1">
+                        <TypeDescriptors>
+                          <TypeDescriptor Name="accountNumber" DefaultDisplayName="Account Number" TypeName="System.String" IdentifierEntityName="SalesforceAccount" IdentifierEntityNamespace="SEDemo.BdcModel1" IdentifierName="accountNumber" />
+                          <TypeDescriptor Name="accountName" DefaultDisplayName="Account Name" TypeName="System.String" />
+                          <TypeDescriptor Name="phoneNumber" DefaultDisplayName="Phone Number" TypeName="System.String" />
+                          <TypeDescriptor Name="billingCountry" DefaultDisplayName="Billing Country" TypeName="System.String" /></TypeDescriptors></TypeDescriptor></TypeDescriptors></TypeDescriptor></Parameter>
+              </Parameters>
+              <MethodInstances><Association Name="SalesforceContactToSalesforceAccountAssociationNavigator1111" Type="AssociationNavigator" ReturnParameterName="salesforceAccountList">
+                  <SourceEntity Name="SalesforceContact" Namespace="SEDemo.BdcModel1" />
+                  <DestinationEntity Name="SalesforceAccount" Namespace="SEDemo.BdcModel1" />
+                </Association></MethodInstances>
+              </Method>
+            <Method Name="Update">
+              <Parameters>
+                <Parameter Name="salesforceContact" Direction="In">
+                  <TypeDescriptor Name="SalesforceContact" TypeName="SEDemo.BdcModel1.Contact, BdcModel1" PreUpdaterField="false">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="contactID" DefaultDisplayName="Contact ID" IdentifierName="contactID" TypeName="System.String" UpdaterField="true" PreUpdaterField="true" />
+                      <TypeDescriptor Name="contactName" DefaultDisplayName="Contact Name" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactPhone" DefaultDisplayName="Phone Number" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactAccountID" DefaultDisplayName="Account ID" IdentifierEntityNamespace="SEDemo.BdcModel1" IdentifierEntityName="SalesforceAccount" IdentifierName="accountNumber" ForeignIdentifierAssociationEntityNamespace="SEDemo.BdcModel1" ForeignIdentifierAssociationEntityName="SalesforceAccount" ForeignIdentifierAssociationName="SalesforceAccountToSalesforceContactAssociationNavigator111" TypeName="System.String" UpdaterField="true" PreUpdaterField="false" />
+                      <TypeDescriptor Name="contactCompany" DefaultDisplayName="Company Name" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactPicture" DefaultDisplayName="Contact Picture" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="mailingcountry" DefaultDisplayName="Country" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="mailingState" DefaultDisplayName="State" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="mailingStreet" DefaultDisplayName="Street" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactEmail" DefaultDisplayName="eMail" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactDepartment" DefaultDisplayName="Department" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactTitle" DefaultDisplayName="Title" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactLeadSource" DefaultDisplayName="Lead Source" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactAssistantName" DefaultDisplayName="Asst. Name" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactAssistantPhone" DefaultDisplayName="Asst. Phone" TypeName="System.String" UpdaterField="true" />
+                      <TypeDescriptor Name="contactPostCode" DefaultDisplayName="Post Code" TypeName="System.String" UpdaterField="true" /></TypeDescriptors></TypeDescriptor></Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Name="Update" Type="Updater" />
+              </MethodInstances></Method>
+
+		 </Methods>
+          <AssociationGroups>
+            <AssociationGroup Name="SalesforceAccountToSalesforceContactAssociation">
+              <AssociationReference EntityName="SalesforceAccount" EntityNamespace="SEDemo.BdcModel1" AssociationName="SalesforceAccountToSalesforceContactAssociationNavigator111" Reverse="false" />
+              <AssociationReference AssociationName="SalesforceContactToSalesforceAccountAssociationNavigator1111" Reverse="true" />
+            </AssociationGroup>
+          </AssociationGroups></Entity>
+      </Entities>
+    </LobSystem>
+  </LobSystems>
+</Model>
